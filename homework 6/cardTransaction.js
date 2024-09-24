@@ -1,23 +1,56 @@
 const cardTransaction = {
   amount: 0,
-  transactionType: ' ',
-  transactionStatus: ' ',
+  transactionType: '',
+  transactionStatus: '',
+
   updateTransaction(amount, type, status) {
-    this.amount += amount;
-    this.transactionType += type;
-    this.transactionStatus += status;
-    return console.log(
-      `${amount}, ${this.transactionType}, ${this.transactionStatus}`
-    );
+    this.amount = amount > 0 ? amount : 0;
+    this.transactionType = type;
+    this.transactionStatus = status;
   },
+
+  resetTransaction() {
+    this.amount = 0;
+    this.transactionType = 'purchase';
+    this.transactionStatus = 'pending';
+  },
+
   getTotal(balance) {
-    return console.log(`Your balance is ${this.amount}`);
+    if (
+      this.transactionType === 'purchase' &&
+      this.transactionStatus === 'completed'
+    ) {
+      return balance - this.amount;
+    } else if (
+      this.transactionType === 'refund' &&
+      this.transactionStatus === 'completed'
+    ) {
+      return balance + this.amount;
+    } else {
+      console.log('Transaction is failed.');
+      return balance;
+    }
   },
+
   displayTransaction() {
-    return console.log(`object`);
+    if (
+      this.transactionStatus === 'pending' ||
+      this.transactionStatus === 'failed'
+    ) {
+      console.log('Transactions is failed.');
+    } else {
+      console.log(`Transaction Details: 
+        Amount: ${this.amount} 
+        Type: ${this.transactionType} 
+        Status: ${this.transactionStatus}`);
+    }
   },
 };
 
+let currentBalance = 500;
+
 cardTransaction.updateTransaction(100, 'purchase', 'completed');
-cardTransaction.getTotal();
-// cardTransaction.resetTransaction();
+cardTransaction.displayTransaction();
+
+currentBalance = cardTransaction.getTotal(currentBalance);
+console.log(`Current Balance is $${currentBalance}`);

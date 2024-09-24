@@ -1,7 +1,7 @@
 const account = {
   owner: 'Alisher',
   balance: 1000,
-  getOwner(owner) {
+  getOwner() {
     `Account owner is ${this.owner}`;
   },
   deposit(amount) {

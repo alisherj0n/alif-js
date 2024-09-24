@@ -5,7 +5,7 @@ function Book(title, author, year, genre) {
   this.genre = genre;
 }
 
-const book = new Book('Harry Potter', 'Chimchigul Qurbonova', 2003, 'Fantasy');
+const book = new Book('Harry Potter', 'Manizha Qurbonova', 2003, 'Fantasy');
 const book2 = new Book('Friends', 'John Doe', 2001, 'Drama');
 
 console.log(book.title);
