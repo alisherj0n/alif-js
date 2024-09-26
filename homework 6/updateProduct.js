@@ -1,5 +1,4 @@
 const updateProductQuantity = (obj, quantity) => {
-  return (obj.quantity = quantity);
   return obj;
 };
 
