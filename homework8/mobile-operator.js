@@ -1,5 +1,3 @@
-//TODO: Get back to this after the second part of lesson Arrays
-
 class MobileOperator {
   clientBase = [];
 
@@ -13,7 +11,7 @@ class MobileOperator {
   }
 
   sortClientsByBalance() {
-    this.clientBase = this.clientBase.toSorted((a, b) => a.balance + b.balance);
+    this.clientBase = this.clientBase.toSorted((a, b) => a.balance - b.balance);
   }
 
   reverseClientList() {
@@ -21,11 +19,7 @@ class MobileOperator {
   }
 
   getClientList() {
-    return console.log(
-      this.clientBase.map(client => {
-        `Client: ${client.name},\nBalance: ${client.balance} `;
-      })
-    );
+    return console.log(this.clientBase);
   }
 }
 
