@@ -3,18 +3,19 @@ class PoliceStation {
 
   addCase(caseNumber, suspectName, status) {
     this.cases.push({
-      caseNumber: caseNumber,
-      suspectName: suspectName,
-      status: status,
+      caseNumber,
+      suspectName,
+      status,
     });
   }
   findCaseByNumber(caseNumber) {
-    return console.log(this.cases.filter(c => c.caseNumber === caseNumber));
+    console.log(this.cases.filter(c => c.caseNumber === caseNumber));
   }
 
   findCaseBySuspectName(suspectName) {
-    return console.log(this.cases.filter(c => c.suspectName === suspectName));
+    console.log(this.cases.filter(c => c.suspectName === suspectName));
   }
+
   getAllCases() {
     console.log(this.cases);
   }

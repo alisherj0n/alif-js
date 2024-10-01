@@ -3,22 +3,22 @@ class CashRegister {
 
   addItem(name, price, quantity) {
     this.items.push({
-      name: name,
-      price: price,
-      quantity: quantity,
+      name,
+      price,
+      quantity,
     });
   }
 
   removeItem(name) {
-    console.log(this.items.filter(item => item.name !== name));
+    this.items = this.items.filter(item => item.name !== name);
   }
 
   calculateTotal() {
-    this.items.reduce((a, b) => a.price + b.price, 0);
+    console.log(this.items.reduce((a, b) => a + b.price * b.quantity, 0));
   }
 
   getReceipt() {
-    return console.log(this.items);
+    console.log(this.items);
   }
 }
 
@@ -30,4 +30,6 @@ cashRegister.addItem('Апельсины', 2.0, 2);
 
 cashRegister.removeItem('Бананы');
 
-console.log(cashRegister.getReceipt());
+cashRegister.calculateTotal();
+
+cashRegister.getReceipt();

@@ -10,7 +10,7 @@ class TaxiOperator {
   }
 
   getLastOrders(count) {
-    return console.log(this.orders.slice(-count));
+    console.log(this.orders.slice(-count));
   }
 
   getOrders() {

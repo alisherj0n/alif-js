@@ -3,7 +3,6 @@ class AuthSystem {
     this.users = new Map();
   }
 
-  // Add a new user to the system
   addUser(login, password, name, email) {
     if (this.users.has(login)) {
       console.log('User already exists!');
@@ -13,7 +12,6 @@ class AuthSystem {
     }
   }
 
-  // Remove a user from the system
   removeUser(login) {
     if (this.users.has(login)) {
       this.users.delete(login);
@@ -23,7 +21,6 @@ class AuthSystem {
     }
   }
 
-  // Authenticate a user
   authenticate(login, password) {
     if (this.users.has(login)) {
       const user = this.users.get(login);
@@ -39,7 +36,6 @@ class AuthSystem {
     return false;
   }
 
-  // Get user details (without showing password)
   getUserInfo(login) {
     if (this.users.has(login)) {
       const { password, ...userInfo } = this.users.get(login);
@@ -51,7 +47,6 @@ class AuthSystem {
   }
 }
 
-// Example usage
 const auth = new AuthSystem();
 
 auth.addUser('user1', 'password123', 'John Doe', 'john@example.com');

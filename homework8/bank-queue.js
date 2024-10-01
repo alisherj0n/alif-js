@@ -4,13 +4,14 @@ class BankQueue {
   addClient(name) {
     this.queue.push(name);
   }
+
   serveClient() {
     const servedClient = this.queue.shift();
-    return console.log(`Client ${servedClient} has been served`);
+    console.log(`Client ${servedClient} has been served`);
   }
 
   getQueue() {
-    return console.log(this.queue);
+    console.log(this.queue);
   }
 }
 

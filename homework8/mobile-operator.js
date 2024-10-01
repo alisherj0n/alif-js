@@ -15,11 +15,11 @@ class MobileOperator {
   }
 
   reverseClientList() {
-    return console.log(this.clientBase.reverse());
+    return this.clientBase.reverse();
   }
 
   getClientList() {
-    return console.log(this.clientBase);
+    console.log(this.clientBase);
   }
 }
 

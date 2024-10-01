@@ -3,22 +3,20 @@ class Airport {
 
   addFlight(flightNumber, destination, status) {
     this.flights.push({
-      flightNumber: flightNumber,
-      destination: destination,
-      status: status,
+      flightNumber,
+      destination,
+      status,
     });
   }
 
   findFlight(flightNumber) {
-    return console.log(
+    console.log(
       this.flights.filter(flight => flight.flightNumber === flightNumber)
     );
   }
 
   filterDelayedFlights() {
-    return console.log(
-      this.flights.filter(flight => flight.status === 'delayed')
-    );
+    console.log(this.flights.filter(flight => flight.status === 'delayed'));
   }
 
   getFlightInfo() {
